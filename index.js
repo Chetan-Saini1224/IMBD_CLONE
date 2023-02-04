@@ -1,7 +1,7 @@
 let moviesList = new Map();
 
 async function getByName(title) {
-  var res = await fetch(`http://www.omdbapi.com/?apikey=c11281bc&t=${title}`);
+  var res = await fetch(`https://www.omdbapi.com/?apikey=c11281bc&t=${title}`);
   return res.json();
 }
 
