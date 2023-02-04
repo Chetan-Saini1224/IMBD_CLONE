@@ -1,12 +1,11 @@
 let moviesList = new Map();
 
 async function getByName(title) {
-  var res = await fetch(`http://www.omdbapi.com/?apikey=c11281bc&t=${title}`);
+  var res = await fetch(`https://www.omdbapi.com/?apikey=c11281bc&t=${title}`);
   return res.json();
 }
 
-function movieCard(movie)
-{
+function movieCard(movie) {
   let movieSearchCard = `<li>
   <div class="movie-search-card" data-movieid=${movie.imdbID}  onclick="aboutMovie(event,this)">
       <div class="movie-search-card-img"> <img src=${movie.Poster} />  </div>
@@ -18,53 +17,47 @@ function movieCard(movie)
       <i id=liked-${movie.imdbID} class="fa-solid fa-heart"></i>
   </div>
  </li>`;
- return movieSearchCard;
+  return movieSearchCard;
 }
 
 async function SearchMovie(e) {
   let title = document.getElementById("search-input").value;
-  console.log(title); 
+  console.log(title);
   if (title.length == 0) {
     document.getElementById("search-list").innerHTML = "";
     moviesList.clear();
   } else if (e.key != "Backspace") {
     let movie = await getByName(title); // handling promise
-     
+
     //if movie is in search list
     let exist = moviesList.has(movie.imdbID);
     if (exist) return;
     moviesList.set(movie.imdbID, movie);
     if (movie.Title) {
-      let movieSearchCard = movieCard(movie);      
+      let movieSearchCard = movieCard(movie);
       document
         .getElementById("search-list")
         .insertAdjacentHTML("afterbegin", movieSearchCard);
     }
 
     //marking all liked movies insearch list
-    if (localStorage.getItem("likedMovies"))
-    {
+    if (localStorage.getItem("likedMovies")) {
       let ids = JSON.parse(localStorage.likedMovies);
-      ids.forEach(element => {
+      ids.forEach((element) => {
         let ele = document.getElementById(`liked-${element}`);
-        if(ele) ele.classList.add("liked-heart");
+        if (ele) ele.classList.add("liked-heart");
       });
     }
-
   }
-
-
 }
 
-function toogleLike(id)
-{
+function toogleLike(id) {
   let ele = document.getElementById(id);
-  if(ele) ele.classList.toggle("liked-heart");
+  if (ele) ele.classList.toggle("liked-heart");
 }
 
 //json.stringfy() wont work on object of object must be arrya of object and object of arrays inside
-function aboutMovie(e, t) 
-{
+function aboutMovie(e, t) {
   //event delegation
   if (e.target.tagName == "I") {
     toogleLike(e.target.id);

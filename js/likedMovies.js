@@ -1,26 +1,26 @@
 async function getById(id) {
-  var res = await fetch(`http://www.omdbapi.com/?apikey=c11281bc&i=${id}`);
+  var res = await fetch(`https://www.omdbapi.com/?apikey=c11281bc&i=${id}`);
   return res.json();
 }
 
 (async () => {
   let list = document.getElementById("liked-movies");
-  if(localStorage.likedMovies) 
-  {
-  let likedIds = JSON.parse(localStorage.likedMovies);
-  if(likedIds.length == 0) list.innerHTML = "<h3 style=' color:red; text-align:center'>No Liked Movies</h3>"; 
-  else 
-  {
-    for (let id of likedIds) {
-      let movie = await getById(id);
-      let card = likedCard(movie);
-      list.insertAdjacentHTML("afterbegin", card);
+  if (localStorage.likedMovies) {
+    let likedIds = JSON.parse(localStorage.likedMovies);
+    if (likedIds.length == 0)
+      list.innerHTML =
+        "<h3 style=' color:red; text-align:center'>No Liked Movies</h3>";
+    else {
+      for (let id of likedIds) {
+        let movie = await getById(id);
+        let card = likedCard(movie);
+        list.insertAdjacentHTML("afterbegin", card);
+      }
     }
-  } 
+  } else {
+    list.innerHTML =
+      "<h3 style=' color:red; text-align:center'>No Liked Movies</h3>";
   }
-  else{
-    list.innerHTML = "<h3 style=' color:red; text-align:center'>No Liked Movies</h3>"; 
-  } 
 })();
 
 function likedCard(movie) {

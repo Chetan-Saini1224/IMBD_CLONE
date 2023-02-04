@@ -1,22 +1,18 @@
 async function getById(id) {
-    var res = await fetch(`http://www.omdbapi.com/?apikey=c11281bc&i=${id}`);
-    return res.json();
-  }
+  var res = await fetch(`https://www.omdbapi.com/?apikey=c11281bc&i=${id}`);
+  return res.json();
+}
 
-
- (async () =>{
-    if(localStorage.Movie)
-    {
-    let movie = await  getById(localStorage.Movie);
+(async () => {
+  if (localStorage.Movie) {
+    let movie = await getById(localStorage.Movie);
     console.log(movie);
     document.getElementById("Movie").innerHTML = MovieCard(movie);
-    }
- })();
+  }
+})();
 
-
-
- function MovieCard(movie) {
-    let movieCard = `
+function MovieCard(movie) {
+  let movieCard = `
     <div class="movie-card">
     
     <div class="movie-card-img">
@@ -40,6 +36,6 @@ async function getById(id) {
     </div>
 
     </div>`;
-  
-    return movieCard;
-  }
+
+  return movieCard;
+}
