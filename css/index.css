@@ -120,7 +120,7 @@ p {
   top: 50%;
   left: 33%;
   background-color: aliceblue;
-  animation: mymove 15s infinite ease-in-out;
+  animation: mymove 17s infinite ease-in-out;
   border-style: dashed;
   font-style: oblique;
   padding: 5px;
@@ -128,12 +128,9 @@ p {
 
 @keyframes mymove {
   33% {
-    color: #f9cd32;
-  }
-  66% {
     color: rgb(84, 84, 247);
   }
-  99% {
-    color: rgb(255, 61, 61);
+  66% {
+    color: #ff463c;
   }
 }
