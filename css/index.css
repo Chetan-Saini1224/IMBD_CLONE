@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  background-image: linear-gradient(rgb(212, 210, 210), rgb(239, 239, 48));
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+  position: absolute;
+  z-index: 2;
+}
+
+nav img {
+  height: 50px;
+  width: 50px;
+}
+
+#search-list {
+  list-style: none;
+  max-height: 50vh;
+  overflow: auto;
+  z-index: 2;
+}
+
+.movie-search-card {
+  display: flex;
+  padding-top: 5px;
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  position: relative;
+  background-image: linear-gradient(rgb(156, 156, 156), rgb(251, 219, 75));
+}
+
+.movie-search-card-img {
+  width: 15%;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.movie-search-card-img img {
+  height: 80%;
+  width: 60%;
+}
+
+#search-field {
+  position: relative;
+  width: 80%;
+  margin-top: 0.3rem;
+}
+
+i {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.7rem;
+  margin: 0.4rem;
+}
+
+.fa-thumbs-up {
+  position: relative;
+  font-size: 1rem;
+}
+
+.liked-heart {
+  color: red;
+}
+
+.fa-star {
+  position: relative;
+  color: rgb(255, 196, 0);
+  font-size: 0.6rem;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.movie-card-img {
+  display: flex;
+  height: 50%;
+}
+
+.movie-card-img img {
+  height: 100%;
+  width: 30%;
+  margin-right: 0.3rem;
+}
+
+#liked-page-link {
+  text-decoration: none;
+  display: block;
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  height: fit-content;
+  font-weight: 500;
+  background-image: linear-gradient(#f9cd32, rgb(252, 226, 100));
+  border-color: #f9cd32;
+  transition: 0.3s;
+}
+
+#liked-page-link:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+p {
+  margin: 0;
+}
+
+#heading {
+  position: absolute;
+  z-index: 1;
+  color: #f9cd32;
+  top: 50%;
+  left: 33%;
+  background-color: aliceblue;
+  animation: mymove 15s infinite ease-in-out;
+  border-style: dashed;
+  font-style: oblique;
+  padding: 5px;
+}
+
+@keyframes mymove {
+  33% {
+    color: #f9cd32;
+  }
+  66% {
+    color: rgb(84, 84, 247);
+  }
+  99% {
+    color: rgb(255, 61, 61);
+  }
+}

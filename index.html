@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Movies</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/index.css">
+        <script src="https://kit.fontawesome.com/393284a720.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav >
+            <img src="./images/icon-logo.png" alt="icon">
+            <div class="d-flex w-75">
+            <section class="w-100 me-2">    
+                <div id="search-field">
+                <input  class="form-control" id="search-input" type="text" onkeyup="SearchMovie(event)" placeholder="Search" >
+                <i class="fa-brands fa-searchengin" onclick="SearchMovie(event)"></i>
+                <div>
+                <ul id="search-list">
+                </ul>
+            </section>
+            </div>
+            <div><a id="liked-page-link" href="./pages/likedMovies.html">Liked Movies</a></div>
+        </nav>
+        <h1 id="heading">Search Movie to get the Result</h1> 
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                           
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./images/slide_1.jpg" class="d-block w-100 h-100" alt="...">
+                <div class="carousel-caption d-none d-md-block ">
+                  <h5>BLack Adam</h5>
+                  <p>In ancient Kahndaq, Teth Adam was bestowed the almighty powers of the gods. After using these powers for vengeance, he was imprisoned, becoming Black Adam. Nearly 5,000 years have passed, and Black Adam has gone from man to myth to legend. Now free, his unique form of justice, born out of rage, is challenged by modern-day heroes who form the Justice Society: Hawkman, Dr. Fate, Atom Smasher and Cyclone.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./images/slide_2.jpg" class="d-block w-100 h-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Hollywood Movies</h5>
+                  <p>
+                    The journey of a thousand miles begins with one step. That which does not kill us makes us stronger. Life is what happens when you're busy making other plans.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./images/slide_3.jpg" class="d-block w-100 h-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Harley Quinn</h5>
+                  <p>Harley Quinn's misadventures and journey of self-discovery after breaking up with the Joker upon the realization that he does not love her.</p>
+                </div>
+              </div>
+            </div>
+          </div>  
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>
