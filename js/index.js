@@ -75,6 +75,6 @@ function aboutMovie(e, t) {
   } else {
     let movie = t.dataset.movieid;
     localStorage.Movie = movie;
-    window.location = "/pages/movieBrief.html";
+    window.location = "pages/movieBrief.html";
   }
 }
